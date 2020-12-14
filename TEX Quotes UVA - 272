@@ -1,0 +1,25 @@
+#include <iostream>
+#include<stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+    char c;
+    bool f= true;
+    while(c=getchar(),c!=EOF){
+        if (c=='\"'&&f==true){
+            putchar('\`');
+            putchar('\`');
+            f=!f;
+        }
+        else if(c=='"'&&f==false){
+            putchar('\'');
+            putchar('\'');
+            f=!f;
+        }
+        else{
+         putchar(c);
+        }
+    }
+}
