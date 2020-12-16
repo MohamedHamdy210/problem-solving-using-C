@@ -1,0 +1,32 @@
+#include <iostream>
+#include<stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+int t,n,s[20],sum=0, maxi,mini,cost,pos;
+scanf("%d",&t);
+for(int i=0;i<t;i++){
+    scanf("%d",&n);
+    for(int j=0;j<n;j++){
+        scanf("%d",&s[j]);
+        sum+=s[j];
+    }
+
+mini=s[0];
+maxi=s[0];
+pos=sum/n;
+for(int k=1;k<n;k++){
+    if(s[k]<mini){
+        mini=s[k];
+    }
+    else if(s[k]>maxi){
+        maxi=s[k];
+    }
+}
+cost=(2*(maxi-pos))+(2*(pos-mini));
+printf("%d\n",cost);
+}
+return 0;
+}
